@@ -58,6 +58,7 @@ if st.session_state.current_account is None:
                 st.session_state.accounts[name] = BankAccount(name, pin)
                 st.session_state.current_account = name
                 st.success("Account created & logged in")
+                st.rerun()
 
         # LOGIN
         else:
@@ -68,6 +69,7 @@ if st.session_state.current_account is None:
             else:
                 st.session_state.current_account = name
                 st.success("Login successful")
+                st.rerun()
 
 
 # ----------- LOGGED IN ----------- #
@@ -123,3 +125,4 @@ else:
     elif action == "Logout":
         st.session_state.current_account = None
         st.success("Logged out successfully")
+        st.rerun()
